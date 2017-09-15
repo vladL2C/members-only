@@ -3,8 +3,26 @@
 <div class="jumbotron">
   <h1 class="display-3">This what they Sayin!</h1>
   <hr> </hr>
+  <ul class="list-group">
+  <% @posts.each do |p| %>
+  <li class="list-group-item list-group-item-primary">
+       <h3>Title: <%= p.title %> </h3> 
+    </li>
+     <li class="list-group-item list-group-item-secondary">
+       <h5>Comment: <%= p.comments %> </h5>
+       <% if logged_in? %>
+        <h6> Post by: <%= p.user.name %> </h6>
+        <% else %>
+        <h6> Log in to see </h6>
+       <% end %>   
 
+     </li>
+     <% end %>   
+</ul>
   <hr> </hr>
+  <% if logged_in? == false %>
+  <h5>Ohhh shnap linden! you gotta sign up or login</h5>
+  <% else %>
   <h5>You can write something too linduk!</h5>
   <hr> </hr>
     <div class="row justify-content-center">
@@ -13,14 +31,14 @@
           <%= f.label :title %>
           <%= f.text_field :title, class: 'form-control' %>
 
-          <%= f.label :comment %>
-          <%= f.text_area :comment, cols: 20, rows: 5,  class: 'form-control' %>
+          <%= f.label :comments %>
+          <%= f.text_area :comments, cols: 20, rows: 5,  class: 'form-control' %>
 
           <%= f.submit "Create Post", class: 'btn btn-primary' %>
           <% end %>
    		</div>
 	</div>
-
+<% end %>
 </div>
 	</div>
 </div>	
