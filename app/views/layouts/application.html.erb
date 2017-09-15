@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MembersOnly</title>
+    <title>Enter site title here</title>
     <%= render 'layouts/main' %> 
   </head>
 
   <body>
   	<%= render 'layouts/header' %>
   	<div class="container">
-
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type%>"><%= message %></div>
+    <% end %>    
 
 
   	
     <%= yield %>
-    <%= debug(params) if Rails.env.development? %>
     <%= render 'layouts/footer' %>
     </div>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

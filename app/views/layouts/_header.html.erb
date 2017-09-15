@@ -1,9 +1,19 @@
+<nav class="navbar navbar-inverse bg-primary">
 <div class="container">
- <nav>
-  <ul class="nav justify-content-end">
-   <li class="nav-item">
-   <a class="nav-link active"><%= link_to "Home", root_path %></a>
-   </li>
-  </ul>
- </nav>
+<%= link_to "Members Only", root_path, id: "logo" %>
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <%= link_to "Home", root_path, class: "nav-link active" %> </a>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Posts", posts_path, class: "nav-link" %>  
+  </li>
+  <li class="nav-item">
+   	<%= link_to "Sign up", signup_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item">
+   	<%= link_to "Login", new_session_path, class: "nav-link" %>
+  </li>
+</ul>
 </div> 
+</nav>
