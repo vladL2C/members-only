@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="d-flex justify-content-center">
+<div class="jumbotron">
+  <h1 class="display-3">This what they Sayin!</h1>
+  <hr> </hr>
+
+  <hr> </hr>
+  <h5>You can write something too linduk!</h5>
+  <hr> </hr>
+    <div class="row justify-content-center">
+   		<div class="col-md-6 offset-md-3">
+        <%= form_for(@post, url: posts_path) do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+
+          <%= f.label :comment %>
+          <%= f.text_area :comment, cols: 20, rows: 5,  class: 'form-control' %>
+
+          <%= f.submit "Create Post", class: 'btn btn-primary' %>
+          <% end %>
+   		</div>
+	</div>
+
+</div>
+	</div>
+</div>	
